@@ -24,7 +24,7 @@ class Worker:
 
 if __name__ == "__main__":
     urlList=[]
-    with open('/scratch/group/kbnk_group/projects/etsy_scraping/runs/lists/list{}.txt'.format(sys.argv[1]),'r') as textList:
+    with open('/PATH/TO/DIR/{}.txt'.format(sys.argv[1]),'r') as textList:
         contents=textList.readlines()
         for line in contents:
             currentPlace=line[:-1]
@@ -33,8 +33,8 @@ if __name__ == "__main__":
 
     today=date.today().strftime('%Y-%m-%d')
 
-    bashCommand='mkdir /scratch/group/kbnk_group/projects/etsy_scraping/runs/{0}/'.format(today)
-    if os.path.exists('/scratch/group/kbnk_group/projects/etsy_scraping/runs/{0}/'.format(today))==False:
+    bashCommand='mkdir /PATH/TO/DIR/{0}/'.format(today)
+    if os.path.exists('/PATH/TO/DIR/'.format(today))==False:
         subprocess.run(bashCommand,shell=True)
 
     i=0
@@ -48,11 +48,11 @@ if __name__ == "__main__":
             try:
                 data = future.result()
                 #print(site)
-                with open("/scratch/group/kbnk_group/projects/etsy_scraping/runs/{0}/{1}.html".format(today,hashed_site),'w') as outFile:
+                with open("/PATH/TO/DIR/{0}/{1}.html".format(today,hashed_site),'w') as outFile:
                     outFile.write(data)
-                with tarfile.open("/scratch/group/kbnk_group/projects/etsy_scraping/runs/{0}/{1}.txz".format(today,hashed_site),'w:xz') as tarFile:
-                    tarFile.add("/scratch/group/kbnk_group/projects/etsy_scraping/runs/{0}/{1}.html".format(today,hashed_site),arcname=str(hashed_site)+'.html')
-                subprocess.run('rm /scratch/group/kbnk_group/projects/etsy_scraping/runs/{0}/{1}.html'.format(today,hashed_site),shell=True)
+                with tarfile.open("/PATH/TO/DIR/{0}/{1}.txz".format(today,hashed_site),'w:xz') as tarFile:
+                    tarFile.add("/PATH/TO/DIR/{0}/{1}.html".format(today,hashed_site),arcname=str(hashed_site)+'.html')
+                subprocess.run('rm /PATH/TO/DIR/{0}/{1}.html'.format(today,hashed_site),shell=True)
                 i+=1
             except Exception as exc:
                 print('%r generated an exception: %s' %(site,exc))

@@ -37,7 +37,7 @@ if __name__ == "__main__":
         urlList=[]
         for el in pageList1:
             urlList.append(getCatagoryContent(el))
-        with open('/scratch/group/kbnk_group/projects/etsy_scraping/runs/lists/list{}.txt'.format(i),'w') as text:
+        with open('/PATH/TO/DIR/{}.txt'.format(i),'w') as text:
             #text.writelines(['%s\n' % item for item in urlList[i]])
             text.writelines(['%s\n' % item for item in urlList])
 

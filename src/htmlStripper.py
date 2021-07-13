@@ -8,7 +8,7 @@ from decimal import *
 
 today=date.today().strftime('%Y-%m-%d')
 #data_files = glob.glob('/scratch/group/kbnk_group/projects/etsy_scraping/runs/{}/*'.format(today))
-data_files = glob.glob('/scratch/group/kbnk_group/projects/etsy_scraping/runs/2021-07-06/*')
+data_files = glob.glob('/PATH/TO/DIR/*')
 
 # Sorts raw html into a dictionary dataDict, and then into the pandas dataframe html_df.
 
@@ -71,4 +71,4 @@ html_df['Tags']=html_df['HTML'].apply(lambda x: get_etsy_details(x))
 
 # Returns the html_df as a csv.
 
-html_df.to_csv("/scratch/group/kbnk_group/projects/etsy_scraping/runs/scrapedEtsyPages.csv", index=False)
+html_df.to_csv("/PATH/TO/DIR/scrapedEtsyPages.csv", index=False)
