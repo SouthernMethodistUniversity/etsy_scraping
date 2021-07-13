@@ -31,7 +31,14 @@ flowchart TB
 
 ## To Run
 
-To run this program:
- - Change all the filepaths, since the current program is hardcoded to use the original directory for the amazon/etsy scraping project. 
- - create the site_url.csv. 
- - Run categoryScraper.sbatch, pageScraper.sbatch, and htmlStripper.sbatch in order.
+To run this workflow:
+ - Identify and possibly change necessary filepaths
+  - The current program is hardcoded to use the original directory for the amazon/etsy scraping project. 
+ - Create `site_url.csv`
+  - This file contains the list of urls that you wish to scrape
+ - Run:
+  1) `categoryScraper.sbatch`
+  2) `pageScraper.sbatch`
+  3) `htmlStripper.sbatch`
+
+This will collect the pages in each category, HTML for each product page, and process the HTML into a dataset.
