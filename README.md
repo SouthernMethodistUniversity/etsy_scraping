@@ -4,30 +4,7 @@ This project strips the content and tags of etsy product webpages, and returns a
 
 ## Workflow
 
-flowchart TB
-
-    subgraph S1
-        direction TB
-        B1{categoryScraper.py}
-        B[Scrape urls from catagory pages]
-    end
-
-    subgraph S2
-        direction TB
-        C2{{Slurm Array}} --> C1{pageScraper.py}
-        C[Get raw html]
-    end
-
-    subgraph S3
-        direction TB
-        D1{htmlStripper.py}
-        D[HTML Extraction] --> E[Text Cleaning]
-    end
-
-    A((Source File)) -->|site_urls.csv| S1
-    S1 --> |Pages folder| S2
-    S2 --> |Dated folder of tared html| S3
-    S3--> |scrapedEtsyPages.csv| F((Output CSV))
+![flowchart](https://github.com/SouthernMethodistUniversity/etsy_scraping/blob/main/artifacts/flowchart.png)
 
 ## To Run
 
