@@ -31,4 +31,7 @@ flowchart TB
 
 ## To Run
 
-To run this program, first change all the filepaths, since the current program is hardcoded to use the original directory for the amazon/etsy scraping project. After that create the site_url.csv. Then run categoryScraper.sbatch, pageScraper.sbatch, and htmlStripper.sbatch in order.
+To run this program:
+ - Change all the filepaths, since the current program is hardcoded to use the original directory for the amazon/etsy scraping project. 
+ - create the site_url.csv. 
+ - Run categoryScraper.sbatch, pageScraper.sbatch, and htmlStripper.sbatch in order.
