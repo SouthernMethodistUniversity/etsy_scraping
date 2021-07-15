@@ -34,7 +34,7 @@ if __name__ == "__main__":
     today=date.today().strftime('%Y-%m-%d')
 
     bashCommand='mkdir /PATH/TO/DIR/{0}/'.format(today)
-    if os.path.exists('/PATH/TO/DIR/'.format(today))==False:
+    if os.path.exists('/PATH/TO/DIR/{}/'.format(today))==False:
         subprocess.run(bashCommand,shell=True)
 
     i=0
