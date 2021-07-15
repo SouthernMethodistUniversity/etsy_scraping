@@ -9,4 +9,4 @@
 module purge
 module use /scratch/group/kbnk_group/projects/etsy_scraping/src
 module load environment
-python3 pageScrapper.py $SLURM_ARRAY_TASK_ID
+python3 pageScraper.py $SLURM_ARRAY_TASK_ID
