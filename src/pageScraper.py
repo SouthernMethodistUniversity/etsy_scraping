@@ -28,7 +28,7 @@ if __name__ == "__main__":
         contents=textList.readlines()
         for line in contents:
             currentPlace=line[:-1]
-            urlList.append(currentPlace)
+            urlList.extend(currentPlace)
     #urlList=urlList[0:50]
 
     today=date.today().strftime('%Y-%m-%d')
